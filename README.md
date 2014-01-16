@@ -1,3 +1,3 @@
 hello_gst
 =========
-gst_test tested on Windows 7
+hello_world.c gst test tested on Windows 7
