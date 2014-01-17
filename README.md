@@ -1,7 +1,7 @@
 hello_gst
 =========
 hello_world.c gst mp3 test
-* tested on Windows 7, 8.1
+* tested on Windows 7, 8.1, Arch Linux
 
 Getting Started On Windows
 ==========================
