@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from gi.repository import Gtk
+import cygst
 
 class MyWindow(Gtk.Window):
 
@@ -11,6 +12,8 @@ class MyWindow(Gtk.Window):
         self.add(self.button)
 
     def on_button_clicked(self, widget):
+        player = cygst.Gst_Test()
+        player.play("test.ogg")
         print("Hello World")
 
 win = MyWindow()
