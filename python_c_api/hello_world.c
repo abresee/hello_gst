@@ -1,8 +1,9 @@
 #include <Python.h>
-#include <windows.h>
-
+#ifdef _WIN32
+#include "windows.h"
+#endif
 int
-main(int argc, wchar_t *argv[])
+main(int argc, wchar_t* argv[])
 {
   Py_SetProgramName(argv[0]);  /* optional but recommended */
   Py_Initialize();
