@@ -1,7 +1,11 @@
-cimport cgst_test
+cdef extern from "gst_test.h":
+    cdef cppclass Gst_Test:
+        Gst_Test()
+        void print_gst_version()
 
-cdef class Gst_Test:
+cdef class PyGst_Test:
+    cdef Gst_Test *thisptr
     def __cinit__(self):
-        cgst_test.print_gst_version();
-    def play(self, track_name):
-        cgst_test.play(track_name);
+        self.thisptr = new Gst_Test()
+    def gst_init(self):
+        self.thisptr.print_gst_version()

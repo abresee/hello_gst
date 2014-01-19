@@ -19,10 +19,5 @@ def fsh(arg):
 cflags = fsh(["pkg-config",lib,"--cflags"])
 libs = fsh(["pkg-config",lib,"--libs"])
 
-setup (
-    cmdclass = {'build_ext': build_ext},
-    ext_modules = [Extension("cygst",
-                   sources=["gst_test.pyx", "gst_test2.c"],
-                   include_dirs=cflags,             
-                   libraries=libs)]
-)
+setup(ext_modules=[Extension("cygst", ["gst_test.pyx", "gst_test2.cpp"], language="c++",include_dirs=cflags, libraries=libs,)],
+      cmdclass = {'build_ext': build_ext})
